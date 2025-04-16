@@ -12,13 +12,13 @@ const thoughtSchema = new Schema({
     createdAt: {
         type: Date,
         default: Date.now,
-        get: (date) => date.toLocaleDateString()
+        get: (date: Date) => date.toLocaleDateString()
     },
     username: {
         type: String,
         required: true
     },
-    reactions: [Reaction.schema]
+    reactions: [Reaction]
 }, { toJSON: { virtuals: true }, id: false });
 
 //added virtual for reaction count
