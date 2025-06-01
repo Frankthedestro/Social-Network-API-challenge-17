@@ -34,7 +34,7 @@ const thoughtController = {
     try {
       const thought = await Thought.create(req.body);
 
-      // Add thought to the user's thoughts array
+      // Add thought to the thoughts array of the user
       await User.findByIdAndUpdate(
         req.body.userId,
         { $push: { thoughts: thought._id } },
@@ -100,7 +100,7 @@ const thoughtController = {
       );
 
       if (!thought) {
-        return res.status(404).json({ message: 'No thought found with this id' });
+        return res.status(404).json({ message: 'No thought found with this id :(' });
       }
 
       res.json(thought);
@@ -120,7 +120,7 @@ const thoughtController = {
       );
 
       if (!thought) {
-        return res.status(404).json({ message: 'No thought found with this id' });
+        return res.status(404).json({ message: 'No thought found with this id :(' });
       }
 
       res.json(thought);

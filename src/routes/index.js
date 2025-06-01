@@ -5,7 +5,7 @@ import apiRoutes from './api/index.js';
 router.use('/api', apiRoutes);
 
 router.use((_req, res) => {
-  return res.send('Wrong route!');
+  return res.send('Uh Oh! Wrong route!');
 });
 
 export default router;

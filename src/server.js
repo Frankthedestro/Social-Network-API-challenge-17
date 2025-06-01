@@ -17,13 +17,13 @@ app.use(routes);
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/socialNetworkDB')
   .then(() => {
-    console.log('Connected to MongoDB successfully!');
+    console.log('Connected to MongoDB successfully! :D');
   })
   .catch((err) => {
-    console.error('Error connecting to MongoDB:', err);
+    console.error(':( Error connecting to MongoDB:', err);
   });
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}!`);
+  console.log(`Server is running on port ${PORT}!`);
 });

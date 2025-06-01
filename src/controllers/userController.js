@@ -72,7 +72,6 @@ const userController = {
 
       // Remove user's thoughts
       await Thought.deleteMany({ username: user.username });
-      
       res.json({ message: 'User and associated thoughts deleted successfully' });
     } catch (err) {
       console.error(err);
@@ -92,7 +91,6 @@ const userController = {
       if (!user) {
         return res.status(404).json({ message: 'No user found with this id' });
       }
-
       res.json(user);
     } catch (err) {
       console.error(err);
@@ -108,11 +106,9 @@ const userController = {
         { $pull: { friends: req.params.friendId } },
         { new: true }
       );
-
       if (!user) {
-        return res.status(404).json({ message: 'No user found with this id' });
+        return res.status(404).json({ message: 'No user found with this id :(' });
       }
-
       res.json(user);
     } catch (err) {
       console.error(err);
